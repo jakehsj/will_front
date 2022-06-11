@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Main from './pages/Main.js'
+import StakePage from './pages/StakePage.js'
+import WillPage from './pages/WillPage.js'
+import CancelPage from './pages/CancelWill.js'
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+} from "react-router-dom";
+// import contract from '';
+// const contractAddress = '';
+// const abi = contract.abi;
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Main/>} />
+                <Route path='stake' element={<StakePage/>} />
+                <Route path='wills' element={<WillPage/>} />
+                <Route path='cancel' element={<CancelPage/>}/>
+            </Routes>    
+        </BrowserRouter>
+    )
 }
 
 export default App;
